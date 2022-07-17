@@ -44,7 +44,7 @@ for j in $(cat $payload); do
 echo "$url" | qsreplace "$j" | tee -a tempredirect.txt
 done
 for k in $(cat tempredirect.txt);do
-	echo "$k" | xargs -P30 -n1 curl -I |grep "google.com" &>/dev/null && echo -e "$k" | tee -a resulttemp.txt
+	echo "$k" | xargs -P30 -n1 curl -I |egrep "google.com|216.58.214.206|172.217.167.46|216.58.214.206 &>/dev/null && echo -e "$k" | tee -a resulttemp.txt
 done
 clear
 banner
@@ -71,7 +71,7 @@ echo "$i" | qsreplace "$j" | tee -a tempredirect.txt
 done
 done
 for k in $(cat tempredirect.txt);do
-	echo "$k" | xargs -P30 -n1 curl|grep "google.com" &>/dev/null && echo -e "$k" | tee -a resulttemp.txt
+	echo "$k" | xargs -P30 -n1 curl|egrep "google.com|216.58.214.206|172.217.167.46|216.58.214.206 &>/dev/null && echo -e "$k" | tee -a resulttemp.txt
 done
 clear
 banner
